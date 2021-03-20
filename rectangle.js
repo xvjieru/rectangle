@@ -19,7 +19,6 @@ $(function(){
     function floatNumer(e, t) {
       return Math.round(e * Math.pow(10, t)) / Math.pow(10, t);   
     }
-
     var p = floatNumer(2*(w+h), 3),
         a = floatNumer(w*h, 3);
 
@@ -29,7 +28,7 @@ $(function(){
   });
 
 
-  //表单校验
+  /*表单校验*/
   function validate(field) {
     //get DOM error message
     var $data = $(field),
@@ -61,19 +60,18 @@ $(function(){
   }
 
 
-  //字段级校验
+  /*字段级校验*/
   $width.focusout(function(){
     // if(!validate(width)) select this
     if(!validate('#width')) $width.select(); 
   });
-
   $height.focusout(function(){
     // if(!validate(width)) select this
     if(!validate('#height')) $height.select(); 
   });
 
 
-  //字符级校验
+  /*字符级校验*/
     //1.event keypress
     //2.event argument get key value,e.key and e.target.value
     //3.illegal key filter, e.preventDefault();
@@ -131,7 +129,6 @@ $(function(){
       e.preventDefault();
     } 
   });
-
   $height.keypress(function(e){
     if(!isLegalKey(e.key, e.target.value, e.target.selectionStart)){
       e.preventDefault();
